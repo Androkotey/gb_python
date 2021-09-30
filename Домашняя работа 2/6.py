@@ -4,6 +4,7 @@
 # Структуру нужно сформировать программно, т.е. запрашивать все данные у пользователя.
 
 goods = []
+
 i = 1
 while True:
     print(f'Введите информацию о продукте №{i}:')
@@ -15,3 +16,15 @@ while True:
     if input('Нажмите любую клавишу для добавления нового товара (или 0 для выхода): ') == '0':
         break
     i += 1
+
+product_analytics = {'название': [], 'цена': [], 'количество': [], 'единица измерения': []}
+for product in goods:
+    product_analytics['название'].append(product[1]['название'])
+    product_analytics['цена'].append(product[1]['цена'])
+    product_analytics['количество'].append(product[1]['количество'])
+
+    new_unit = product[1]['eд']
+    if new_unit not in product_analytics['единица измерения']:
+        product_analytics['единица измерения'].append(new_unit)
+
+print(f'Продуктовая аналитика: {product_analytics}')
