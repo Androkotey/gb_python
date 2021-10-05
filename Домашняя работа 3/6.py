@@ -4,18 +4,20 @@
 
 # Вариант 1
 def int_func_1(word):
+    assert word.isascii() and word[0].islower()
     return word.title()
 
 
-print(int_func_1('зима'))
+print(int_func_1('winter'))
 
 
 # Вариант 2
 def int_func_2(word):
+    assert word.isascii() and word[0].islower()
     return chr(ord(word[0]) - 32) + word[1:]
 
 
-print(int_func_2('зима'))
+print(int_func_2('winter'))
 
 # Продолжить работу над заданием. В программу должна попадать строка из слов, разделенных пробелом.
 # Каждое слово состоит из латинских букв в нижнем регистре.
