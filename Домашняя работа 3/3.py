@@ -15,8 +15,8 @@ print(my_func(10, 40, 15))
 def my_func_2(*numbers):
     """Возвращает сумму двух наибольших аргументов"""
 
-    num_1 = 0
-    num_2 = 0
+    num_1 = -10e9
+    num_2 = -10e9
     for num in numbers:
         if num > num_1:
             num_1 = num
