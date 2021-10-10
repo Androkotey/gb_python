@@ -5,7 +5,7 @@
 import time
 import random
 
-my_list = [random.randint(0, 1500) for _ in range(10000)]
+my_list = [random.randint(0, 1500) for _ in range(20000)]
 
 # Варимант 1 (сложность O(n))
 start = time.perf_counter()
