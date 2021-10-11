@@ -9,17 +9,14 @@
 Физика: 30(л) — 10(лаб)
 Физкультура: — 30(пр) —
 """
+import re
+
 
 subject_dict = dict()
 with open('6.txt', 'r', encoding='utf-8') as file:
-    for raw_line in file:
-        prepared_line = raw_line.split()
-        subject_dict[prepared_line[0][:-1]] = 0
-        for raw_element in prepared_line:
-            prepared_element = raw_element.split('(')
-            try:
-                subject_dict[prepared_line[0][:-1]] += int(prepared_element[0])
-            except ValueError:
-                continue
+    for line in file:
+        subject = re.match(r'[A-я]+', line).group(0)
+        subject_dict[subject] = sum(map(int, re.findall(r'[0-9]+', line)))
+
 
 print(subject_dict)
