@@ -10,12 +10,13 @@
 
 
 class Car:
-    def __init__(self, speed, color, name, is_police=False):
+    is_police = False
+
+    def __init__(self, speed, color, name):
         self.potential_speed = speed
         self.speed = 0
         self.color = color
         self.name = name
-        self.is_police = is_police
 
     def go(self):
         self.speed = self.potential_speed
@@ -51,9 +52,11 @@ class WorkCar(Car):
 
 
 class PoliceCar(Car):
+    is_police = True
+
     def __init__(self, speed, color, name):
         super().__init__(speed, color, name)
-        self.is_police = True
+
 
 
 print('Проверка TownCar')
